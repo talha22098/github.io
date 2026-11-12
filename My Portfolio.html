@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f8;--ink:#12263a;--muted:#55677a;--card:#ffffff;--line:#cfdae5;--accent:#e0a100;--on-accent:#12263a;--r:14px;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c2a;--ink:#e8eef5;--muted:#9fb0c1;--card:#162738;--line:#27405a}}
+:root[data-theme="dark"]{--bg:#0f1c2a;--ink:#e8eef5;--muted:#9fb0c1;--card:#162738;--line:#27405a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:19px;line-height:1.6}
+h1,h2,h3,.brand,nav a,button,label{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:880px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:20px;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:8px 14px;border-radius:99px;text-decoration:none;color:var(--muted);font-weight:500;font-size:16px}
+nav a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+nav a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,.brand:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+main{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.page{display:none}.page.on{display:block}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.avatar{width:150px;height:150px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font:800 56px "Bricolage Grotesque",sans-serif;overflow:hidden;border:4px solid var(--card)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(38px,8vw,64px);line-height:1.02;margin:0 0 12px;font-weight:800;letter-spacing:-.02em}
+h2{font-size:32px;margin:0 0 16px;font-weight:700}
+h3{margin:0 0 6px;font-size:21px}
+p{margin:0 0 14px;max-width:62ch}
+.lead{font-size:22px;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);padding:12px 22px;border-radius:99px;font-weight:700;text-decoration:none;border:0;font-size:17px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;padding:0;list-style:none}
+.tags li{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:2px 10px;font:500 14px "Bricolage Grotesque",sans-serif}
+.card a{color:var(--ink);font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none}
+.skills li{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 16px;font-family:"Bricolage Grotesque",sans-serif}
+form{display:grid;gap:14px;max-width:520px}
+label{display:grid;gap:6px;font-weight:500;font-size:16px}
+input,textarea{font:inherit;font-family:"Newsreader",Georgia,serif;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+.msg{min-height:1.5em;font-weight:600}.msg.err{color:#c0392b}.msg.ok{color:#1d8348}
+footer{max-width:880px;margin:0 auto;padding:20px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+@media (max-width:560px){.hero{grid-template-columns:1fr}.avatar{width:120px;height:120px;font-size:44px}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="brand" href="#home">Your Name</a>
+<nav aria-label="Main">
+<a href="#home" data-p="home">Home</a><a href="#about" data-p="about">About</a><a href="#projects" data-p="projects">Projects</a><a href="#contact" data-p="contact">Contact</a>
+</nav></div></header>
+
+<main>
+<section class="page" id="home" aria-labelledby="t-home">
+<div class="hero">
+<div class="avatar" aria-label="Profile picture"><!-- To use your photo: replace the letters with <img src="profile.jpg" alt="Your name"> -->YN</div>
+<div>
+<h1 id="t-home">Hi, I build websites.</h1>
+<p class="lead">I am a web developer. I make simple, fast and useful apps.</p>
+<a class="btn" href="#projects">See my projects</a><a class="btn alt" href="#contact">Contact me</a>
+</div></div>
+</section>
+
+<section class="page" id="about" aria-labelledby="t-about">
+<h2 id="t-about">About me</h2>
+<p>Write a short story about yourself here. Say who you are, what you like to build, and what you are learning now.</p>
+<p>I am learning every day. My goal is to build tools that help people.</p>
+<h3>Skills</h3>
+<ul class="skills"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git and GitHub</li><li>English (learning)</li></ul>
+</section>
+
+<section class="page" id="projects" aria-labelledby="t-projects">
+<h2 id="t-projects">Projects</h2>
+<div class="grid" id="list"></div>
+</section>
+
+<section class="page" id="contact" aria-labelledby="t-contact">
+<h2 id="t-contact">Contact</h2>
+<p>Send me a message. I will read it soon.</p>
+<form id="f" novalidate>
+<label>Your name<input id="n" autocomplete="name"></label>
+<label>Your email<input id="e" type="email" autocomplete="email"></label>
+<label>Message<textarea id="m" rows="5"></textarea></label>
+<button class="btn" type="submit">Send message</button>
+<div class="msg" id="out" role="status"></div>
+</form>
+</section>
+</main>
+<footer>© <span id="y"></span> Your Name. Built with HTML, CSS and JavaScript. <button id="th" class="btn alt" style="margin-left:8px;padding:4px 12px;font-size:14px">Change theme</button></footer>
+
+<script>
+var projects=[
+{t:"Task Tracker",d:"A simple app to plan your day and tick off tasks.",g:["JavaScript","CSS"]},
+{t:"Weather Now",d:"Shows the weather for your city in one click.",g:["API","HTML"]},
+{t:"English Flashcards",d:"Learn new English words with small cards.",g:["JavaScript","Learning"]}
+];
+document.getElementById("list").innerHTML=projects.map(function(p){
+return '<article class="card"><h3>'+p.t+'</h3><p>'+p.d+'</p><ul class="tags">'+p.g.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul></article>'}).join("");
+document.getElementById("y").textContent=new Date().getFullYear();
+
+var names=["home","about","projects","contact"];
+function route(){
+var h=(location.hash||"#home").slice(1);if(names.indexOf(h)<0)h="home";
+names.forEach(function(n){
+document.getElementById(n).classList.toggle("on",n===h);
+var a=document.querySelector('nav a[data-p="'+n+'"]');
+if(n===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
+});
+window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+
+document.getElementById("f").addEventListener("submit",function(ev){
+ev.preventDefault();
+var n=document.getElementById("n").value.trim(),e=document.getElementById("e").value.trim(),m=document.getElementById("m").value.trim(),o=document.getElementById("out");
+if(!n||!m){o.className="msg err";o.textContent="Please write your name and a message.";return}
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)){o.className="msg err";o.textContent="Please write a correct email.";return}
+o.className="msg ok";o.textContent="Thank you, "+n+". Your message is ready to send.";
+ev.target.reset();
+});
+
+document.getElementById("th").addEventListener("click",function(){
+var r=document.documentElement,dark=r.getAttribute("data-theme")==="dark"||(!r.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme: dark)").matches);
+r.setAttribute("data-theme",dark?"light":"dark");
+});
+</script>
+</body>
+</html>
